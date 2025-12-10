@@ -1,0 +1,86 @@
+<div class="container">
+  <h2>📝 הזמנת ביקור טכנאי</h2>
+
+  <form [formGroup]="technicianForm" (ngSubmit)="onSubmit()">
+
+    <div class="form-group">
+      <label for="customerName">שם המזמין:</label>
+      <input id="customerName" type="text" formControlName="customerName" placeholder="הכנס שם מלא">
+      
+      <div *ngIf="control['customerName'].invalid && (control['customerName'].dirty || control['customerName'].touched)" class="error-message">
+        <div *ngIf="control['customerName'].errors?.['required']">שם המזמין הוא שדה חובה.</div>
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <label for="date">תאריך מבוקש:</label>
+      <input id="date" type="date" formControlName="date">
+      <div *ngIf="control['date'].invalid && (control['date'].dirty || control['date'].touched)" class="error-message">
+        <div *ngIf="control['date'].errors?.['required']">תאריך הוא שדה חובה.</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="address">כתובת:</label>
+      <input id="address" type="text" formControlName="address" placeholder="רחוב ומספר בית">
+      <div *ngIf="control['address'].invalid && (control['address'].dirty || control['address'].touched)" class="error-message">
+        <div *ngIf="control['address'].errors?.['required']">כתובת היא שדה חובה.</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="city">עיר:</label>
+      <input id="city" type="text" formControlName="city" placeholder="הכנס עיר">
+      <div *ngIf="control['city'].invalid && (control['city'].dirty || control['city'].touched)" class="error-message">
+        <div *ngIf="control['city'].errors?.['required']">עיר היא שדה חובה.</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="phone">טלפון:</label>
+      <input id="phone" type="tel" formControlName="phone" placeholder="דוגמה: 05X-XXXXXXX">
+      <div *ngIf="control['phone'].invalid && (control['phone'].dirty || control['phone'].touched)" class="error-message">
+        <div *ngIf="control['phone'].errors?.['required']">טלפון הוא שדה חובה.</div>
+        <div *ngIf="control['phone'].errors?.['pattern']">יש להזין רק ספרות.</div>
+        <div *ngIf="control['phone'].errors?.['minlength'] || control['phone'].errors?.['maxlength']">
+          מספר הטלפון חייב להיות בין 9 ל-10 ספרות.
+        </div>
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <label for="reason">סיבת הזימון:</label>
+      <select id="reason" formControlName="reason">
+        <option value="" disabled>בחר סיבה</option>
+        <option *ngFor="let reason of reasonOptions" [ngValue]="reason">{{ reason }}</option>
+      </select>
+      <div *ngIf="control['reason'].invalid && (control['reason'].dirty || control['reason'].touched)" class="error-message">
+        <div *ngIf="control['reason'].errors?.['required']">סיבת הזימון היא שדה חובה.</div>
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <label for="invoiceNumber">מספר חשבונית:</label>
+      <input id="invoiceNumber" type="text" formControlName="invoiceNumber" placeholder="הכנס מספר חשבונית">
+      
+      <div *ngIf="control['invoiceNumber'].errors?.['required'] && control['invoiceNumber'].touched" class="error-message">
+        מספר החשבונית הוא שדה חובה עבור התקנת מוצר חדש.
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <label for="description">תיאור התקלה:</label>
+      <textarea id="description" formControlName="description" rows="4" placeholder="תאר את התקלה או את פרטי ההתקנה"></textarea>
+      
+      <div *ngIf="control['description'].errors?.['required'] && control['description'].touched" class="error-message">
+        תיאור התקלה הוא שדה חובה עבור זימון טכנאי לתקלה.
+      </div>
+    </div>
+
+    <button type="submit" [disabled]="technicianForm.invalid">שלח הזמנה</button>
+  </form>
+</div>
+<form [formGroup]="technicianForm" (ngSubmit)="onSubmit()">
+
+    <button type="submit" [disabled]="technicianForm.invalid">שלח הזמנה</button>
+</form>
