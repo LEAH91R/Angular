@@ -1,0 +1,9 @@
+<!-- <p>apartments-for-rent works!</p> -->
+<h2>רשימת דירות זמינות</h2>
+
+<div class="apartment-list">
+  <div *ngFor="let apt of apartments" class="apartment-card">
+    <h3>{{ apt.title }}</h3>
+    <p>מחיר: {{ apt.price }} ₪</p>
+  </div>
+</div>

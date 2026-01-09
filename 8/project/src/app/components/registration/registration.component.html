@@ -1,0 +1,23 @@
+<div class="form-container">
+  <h2>הרשמה למערכת</h2>
+
+  <input
+    type="text"
+    [(ngModel)]="userName"
+    placeholder="הכנס את שמך כאן"
+  >
+
+  <input
+    type="email"
+    [(ngModel)]="userEmail"
+    placeholder="הכנס אימייל"
+  >
+
+  <input
+    type="tel"
+    [(ngModel)]="userPhone"
+    placeholder="הכנס טלפון"
+  >
+
+  <button (click)="onSend()">שלח</button>
+</div>

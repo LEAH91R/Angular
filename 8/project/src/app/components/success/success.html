@@ -1,0 +1,29 @@
+<div class="success-page">
+  <h1>שלום {{ userName }},</h1>
+  <p class="message">הרשמתך נקלטה בהצלחה!</p>
+  
+  <div class="apartments-links">
+    <h2>בחר סוג דירות:</h2>
+    
+    <button 
+      class="apartment-button" 
+      (click)="navigateTo('/for-sale')"
+    >
+      🏠 דירות למכירה
+    </button>
+    
+    <button 
+      class="apartment-button" 
+      (click)="navigateTo('/for-rent')"
+    >
+      🔑 דירות להשכרה
+    </button>
+    
+    <button 
+      class="apartment-button" 
+      (click)="navigateTo('/vacation')"
+    >
+      🏖️ דירות חופשה
+    </button>
+  </div>
+</div>
