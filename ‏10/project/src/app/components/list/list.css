@@ -1,0 +1,70 @@
+/* עיצוב המיכל הראשי */
+.container {
+  max-width: 450px;
+  margin: 30px auto;
+  padding: 20px;
+  direction: rtl; /* יישור לימין עבור עברית */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* עיצוב הכותרת */
+h2 {
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* עיצוב תיבת הטקסט (Input) */
+input[type="text"] {
+  width: 100%;
+  padding: 12px 15px;
+  font-size: 16px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  outline: none;
+  transition: all 0.3s ease;
+  box-sizing: border-box; /* מבטיח שהפדינג לא יחרוג מהרוחב */
+}
+
+/* עיצוב התיבה בזמן לחיצה (Focus) */
+input[type="text"]:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
+}
+
+/* עיצוב הרשימה */
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+/* עיצוב כל פריט ברשימה (עיר) */
+li {
+  background-color: #f8f9fa;
+  padding: 12px 15px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  border-right: 5px solid #007bff; /* פס כחול בצד ימין */
+  color: #444;
+  font-weight: 500;
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+/* אפקט מעבר עכבר על עיר */
+li:hover {
+  background-color: #e9ecef;
+  transform: scale(1.02); /* הגדלה קלה מאוד */
+  cursor: pointer;
+}
+
+/* עיצוב להודעה כשאין תוצאות */
+.no-results {
+  text-align: center;
+  color: #888;
+  margin-top: 20px;
+  font-style: italic;
+}

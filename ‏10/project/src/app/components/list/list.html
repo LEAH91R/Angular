@@ -1,0 +1,12 @@
+
+<div class="container" style="direction: rtl; padding: 20px;">
+  
+  <input type="text" [(ngModel)]="searchWord" placeholder="חפש עיר...">
+
+  <ul>
+    <li *ngFor="let city of cities | myPipe : searchWord">
+      {{ city }}
+    </li>
+  </ul>
+
+</div>
